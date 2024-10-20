@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="description"
+          content="Knowledge Graph Large Language Model (KG-LLM) for Link Prediction">
+    <meta name="keywords" content="Large Language Models, Knowledge Graph, Link Prediction">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Knowledge Graph Large Language Model (KG-LLM) for Link Prediction</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/icon_fair.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <!-- <div class="navbar-menu">
+          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="xxxxx">
+            <span class="icon">
+                <i class="fas fa-home"></i>
+            </span>
+            </a>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                More Research
+              </a>
+              <div class="navbar-dropdown">
+                <a class="navbar-item" href="https://hypernerf.github.io">
+                  HyperNeRF
+                </a>
+                <a class="navbar-item" href="https://nerfies.github.io">
+                  Nerfies
+                </a>
+                <a class="navbar-item" href="https://latentfusion.github.io">
+                  LatentFusion
+                </a>
+                <a class="navbar-item" href="https://photoshape.github.io">
+                  PhotoShape
+                </a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    </nav>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title " style="color: hsl(205, 100%, 38%);">Knowledge Graph Large Language Model (KG-LLM) for Link Prediction</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=KfIlTroAAAAJ&hl=en">Dong Shu*</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=sPl5Y9AAAAAJ&hl=zh-CN&authuser=1">Tianle Chen*</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=aYfy924AAAAJ">Mingyu Jin</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=njMEAhIAAAAJ&hl=en">Chong Zhang</a><sup>4</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=0i-Js2gAAAAJ">Mengnan Du</a><sup>3</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=A66WefUAAAAJ&hl=en">Yongfeng Zhang</a><sup>2</sup>,
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Northwestern University,</span>
+                            <span class="author-block"><sup>2</sup>Rutgers University,</span>
+                            <span class="author-block"><sup>2</sup>New Jersey Institute of Technology,</span>
+                            <span class="author-block"><sup>2</sup>University of Liverpool</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2403.07311"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href=""
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>PowerPoint (Coming Soon)</span>
+                                    </a>
+                                </span>
+                                <!-- Video Link. -->
+                                <!-- <span class="link-block">
+                                  <a href="TBC_video"
+                                     class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                    <span>Poster</span>
+                                  </a>
+                                </span> -->
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/rutgerswiselab/KG-LLM"
+                                       class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <!-- Dataset Link. -->
+                                <!-- <span class="link-block"> -->
+                                <!-- <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                                   class="external-link button is-normal is-rounded is-dark">
+                                  <span class="icon">
+                                      <i class="far fa-images"></i>
+                                  </span>
+                                  <span>Data</span>
+                                  </a> -->
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Workflow. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-five-fifths">
+                    <!-- <div class="columns is-centered"> -->
+                        <img src="./static/figs/overview.png" width="80%">
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="color: hsl(205, 100%, 38%);">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            The task of multi-hop link prediction within knowledge graphs (KGs) stands as a challenge in the field of knowledge graph analysis, as it requires the model to reason through and understand all intermediate connections before making a prediction. In this paper, we introduce the Knowledge Graph Large Language Model (KG-LLM), a novel framework that leverages large language models (LLMs) for knowledge graph tasks. We first convert structured knowledge graph data into chain-of-thought (CoT) natural language and then use these CoT prompts to fine-tune LLMs to enhance multi-hop link prediction in KGs.
+                        </p>
+                        <p>
+                            By converting knowledge graphs into CoT prompts, our framework allows LLMs to better understand and learn the latent representations of entities and their relationships within the knowledge graph. Our analysis of real-world datasets confirms that our framework improves generative multi-hop link prediction in KGs, underscoring the benefits of incorporating CoT and instruction fine-tuning during training. Our findings also indicate that our framework substantially improves the generalizability of LLMs in responding to unseen prompts.
+                        </p>
+                        <p>
+                            In this paper, we conduct experiments to evaluate the effectiveness of the proposed KG-LLM frameworks to answer the following several key research questions:
+                            <p>
+                                1. Q1: Which framework demonstrates superior efficacy in multi-hop link prediction tasks in the absence of ICL?
+                            </p>    
+                            <p>
+                                2. Q2: Does incorporating ICL enhance model performance on multi-hop link prediction task?
+                            </p>   
+                            <p>
+                                3. Q3: Is the KG-LLM framework capable of equipping models with the ability to navigate unseen prompts during multi-hop relation prediction inferences?
+                            </p>   
+                            <p>
+                                4. Q4: Can the application of ICL bolster the models' generalization ability in multi-hop relation prediction tasks?
+                            </p>   
+
+                        </p>
+                        <p>
+                            <b>Keywords:</b> Large Language Models, Knowledge Graph, Link Prediction
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="color: hsl(205, 100%, 38%);">CoT Prompt</h2>
+                    <div class="content has-text-justified">
+
+                        <div class="columns is-centered">
+                            <img src="./static/figs/prompt.png" width="70%">
+                        </div>
+                    </div>
+                    <div class="content has-text-justified">
+                        <p>
+                            An Example of Prompt Used in the Multi-hop Link Prediction Training Process: Models processed through the ablation framework will be trained using the ablation knowledge prompt (left), whereas models processed via the KG-LLM frameworkwill be trained on the KG-LLM knowledge prompt (right).
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="color: hsl(205, 100%, 38%);">
+                        Q1
+                    </h2>
+                    <div class="content has-text-justified">
+
+                        <div class="columns is-centered">
+                            <img src="./static/figs/link_pred_without.png" width="60%">
+                        </div>
+                    </div>
+                    <div class="content has-text-justified">
+                        <p>
+                            - The KG-LLM framework outperformed traditional approaches and ablation models across all datasets.
+                        </p>
+                        <p>
+                            - The traditional GNN model, especially ConvRot, showed relatively good performance, surpassing ablation models on the WN18RR dataset.
+                        </p>
+                        <p>
+                            - The results highlight the effectiveness of the KG-LLM framework, enriched with Chain-of-Thought (CoT) reasoning and IFT.
+                        </p>
+                    </div>
+                    <div class="content has-text-justified">
+
+                        <div class="columns is-centered">
+                            <img src="./static/figs/linear_relation.png" width="60%">
+                        </div>
+                    </div>
+                    <div class="content has-text-justified">
+                        <p>
+                            - We evaluated the performance of GNN, ablation, and KG-LLM framework models across different levels of hop complexity on the WN18RR and NELL-995 datasets.
+                        </p>
+                        <p>
+                            - GNN and ablation models' performance significantly declines as hop complexity increases.
+                        </p>
+                        <p>
+                            - As hop complexity grows, these models tend to frequently respond with 'No' to most questions, leading to: F1 scores close to 0 and AUC scores around 0.5.
+                        </p>
+                        <p>
+                            - In contrast, the KG-LLM framework models effectively manage the challenge, maintaining consistent performance even at five-hops, with the exception of the Flan-T5 model.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="color: hsl(205, 100%, 38%);">
+                        Q2
+                    </h2>
+                    <div class="content has-text-justified">
+
+                        <div class="columns is-centered">
+                            <img src="./static/figs/link_pred_with.png" width="60%">
+                        </div>
+                    </div>
+                    <div class="content has-text-justified">
+                        <p>
+                            We reveals a notable enhancement in the performance of models under the ablation
+                            framework, with LLaMa2 and Gemma models achieving an F1 and AUC score exceeding
+                            80% in WN18RR and NELL-995 datasets. Remarkably, the adoption of ICL within the KG-
+                            LLM framework resulted in a significant performance uplift. Notably, the Gemma model
+                            achieved a staggering 98% F1 score on the first dataset, while LlaMa2 recorded a 96% F1
+                            score on the second dataset.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="color: hsl(205, 100%, 38%);">
+                        Q3 & Q4
+                    </h2>
+                    <div class="content has-text-justified">
+
+                        <div class="columns is-centered">
+                            <img src="./static/figs/relation_pred.png" width="70%">
+                        </div>
+                    </div>
+                    <div class="content has-text-justified">
+                        <p>
+                            <b> For experiments on multi-hop relation prediction without in-context learning (ICL):</b>
+                        </p>
+                            <p>
+                                - Both frameworks had limited performance without ICL, though the KG-LLM framework performed marginally better.
+                            </p>
+                            <p>
+                                - Models tended to provide 'yes' or 'no' answers for most questions, similar to previous multi-hop link prediction tasks.
+                            </p>
+                            <p>
+                                - Some questions elicited random responses from the models.
+                            </p>
+
+                        <p>
+                            <b> For experiments on multi-hop relation prediction with in-context learning (ICL): </b>
+                        </p>
+                            <p>
+                                - There is significant improvement in models' generalization abilities under both ablation and KG-LLM frameworks, compared to performance without ICL (blue bars).
+                            </p>
+                            <p>
+                                - KG-LLM framework models, particularly LlaMa2 and Gemma, achieved over 70% accuracy on WN18RR datasets when using ICL.
+                            </p>
+                        <p>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+
+
+        </div>
+    </section>
+
+    
+
+    <!-- journal={arXiv preprint arXiv:2408.09757}, -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title" style="color: hsl(205, 100%, 38%);">BibTeX</h2>
+            <pre><code>@article{shu2024knowledge,
+    title={Knowledge Graph Large Language Model (KG-LLM) for Link Prediction},
+    author={Shu, Dong and Chen, Tianle and Jin, Mingyu and Zhang, Yiting and Du, Mengnan and Zhang, Yongfeng},
+    journal={arXiv preprint arXiv:2403.07311},
+    year={2024}
+}</code></pre>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <!-- <div class="content has-text-centered">
+              <a class="icon-link"
+                 href="./static/videos/nerfies_paper.pdf">
+                <i class="fas fa-file-pdf"></i>
+              </a>
+              <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+                <i class="fab fa-github"></i>
+              </a>
+            </div> -->
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                                                href="http://creativecommons.org/licenses/by-sa/4.0/">
+                                Creative
+                                Commons Attribution-ShareAlike 4.0 International License
+                            </a>.
+                            We thank the website template from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
