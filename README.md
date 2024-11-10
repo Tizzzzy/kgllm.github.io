@@ -1,4 +1,4 @@
-# Strategic Demonstration Selection for Improved Fairness in LLM In-Context Learning
+# Knowledge graph large language model (KG-LLM) for link prediction
 
 
 
